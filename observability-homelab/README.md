@@ -39,8 +39,8 @@
 
 ## 📸 Screenshots
 
-![Grafana Dashboard](observability-homelab/grafana-dashboard.png)
-![Prometheus Query](observability-homelab/prometheus-query.png)
+![Grafana Dashboard](docs/grafana-dashboard.png)
+![Prometheus Query](docs/prometheus-query.png)
 
 ## 🛠️ Stack
 
