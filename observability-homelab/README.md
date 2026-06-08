@@ -58,7 +58,7 @@
 
 ### 1. Clone o repositório
 ```bash
-git clone https://github.com/SEU-USUARIO/observability-homelab.git
+git clone https://github.com/biagasparino/observability-homelab.git
 cd observability-homelab
 ```
 
@@ -128,4 +128,4 @@ observability-homelab/
 
 **Bianca Gasparino de Campos**  
 Observability & SRE Engineer  
-[LinkedIn](https://www.linkedin.com/in/bianca-gasparino/) · [GitHub](https://github.com/SEU-USUARIO)
+[LinkedIn](https://www.linkedin.com/in/bianca-gasparino/) · [GitHub](https://github.com/biagasparino)
