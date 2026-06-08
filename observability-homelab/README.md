@@ -39,8 +39,8 @@
 
 ## 📸 Screenshots
 
-![Grafana Dashboard](docs/grafana-dashboard.png)
-![Prometheus Query](docs/prometheus-query.png)
+![Grafana Dashboard](doc/grafana-dashboard.png)
+![Prometheus Query](doc/prometheus-query.png)
 
 ## 🛠️ Stack
 
