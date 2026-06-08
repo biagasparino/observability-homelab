@@ -1,15 +1,15 @@
 # 🔭 observability-homelab
 
-> Stack completa de monitoramento e observabilidade rodando localmente com Docker Compose.  
-> Projeto de estudo e portfólio — construído para demonstrar práticas reais de SRE e Observabilidade.
+> Full monitoring and observability stack running locally with Docker Compose.  
+> Study and portfolio project — built to demonstrate real SRE and Observability practices.
 
 ![Stack](https://img.shields.io/badge/Stack-Prometheus%20%7C%20Grafana%20%7C%20Zabbix%20%7C%20Alertmanager-blue?style=flat-square)
 ![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)
-![Status](https://img.shields.io/badge/Status-Em%20desenvolvimento-yellow?style=flat-square)
+![Status](https://img.shields.io/badge/Status-In%20Development-yellow?style=flat-square)
 
 ---
 
-## 🧱 Arquitetura
+## 🧱 Architecture
 
 ```
 ┌─────────────────────────────────────────────────┐
@@ -22,7 +22,7 @@
 │         │scrape                 │notify         │
 │  ┌──────▼──────┐         ┌──────▼──────┐        │
 │  │Node Exporter│         │    Slack    │        │
-│  │  :9100      │         │  #alertas  │        │
+│  │  :9100      │         │  #alerts   │        │
 │  └─────────────┘         └─────────────┘        │
 │                                                 │
 │  ┌─────────────┐     ┌─────────────────────┐   │
@@ -44,43 +44,43 @@
 
 ## 🛠️ Stack
 
-| Ferramenta | Função | Porta |
+| Tool | Function | Port |
 |---|---|---|
-| Prometheus | Coleta e armazenamento de métricas | 9090 |
-| Node Exporter | Exporta métricas do host (CPU, memória, disco) | 9100 |
-| Grafana | Visualização e dashboards | 3000 |
-| Alertmanager | Gerenciamento e roteamento de alertas | 9093 |
-| Zabbix Server | Monitoramento de infraestrutura | 10051 |
-| Zabbix Web | Interface web do Zabbix | 8080 |
+| Prometheus | Metrics collection and storage | 9090 |
+| Node Exporter | Exports host metrics (CPU, memory, disk) | 9100 |
+| Grafana | Visualization and dashboards | 3000 |
+| Alertmanager | Alert management and routing | 9093 |
+| Zabbix Server | Infrastructure monitoring | 10051 |
+| Zabbix Web | Zabbix web interface | 8080 |
 
 ---
 
-## 🚀 Como rodar
+## 🚀 How to run
 
-### Pré-requisitos
-- [Docker Desktop](https://www.docker.com/products/docker-desktop/) instalado
-- Git instalado
+### Prerequisites
+- [Docker Desktop](https://www.docker.com/products/docker-desktop/) installed
+- Git installed
 
-### 1. Clone o repositório
+### 1. Clone the repository
 ```bash
 git clone https://github.com/biagasparino/observability-homelab.git
 cd observability-homelab
 ```
 
-### 2. Configure o Alertmanager (opcional)
-Edite `alertmanager/alertmanager.yml` e insira seu webhook do Slack:
+### 2. Configure Alertmanager (optional)
+Edit `alertmanager/alertmanager.yml` and add your Slack webhook:
 ```yaml
-api_url: "https://hooks.slack.com/services/SEU/WEBHOOK/AQUI"
+api_url: "https://hooks.slack.com/services/YOUR/WEBHOOK/HERE"
 ```
 
-### 3. Suba o ambiente
+### 3. Start the environment
 ```bash
 docker compose up -d
 ```
 
-### 4. Acesse os serviços
+### 4. Access the services
 
-| Serviço | URL | Login |
+| Service | URL | Login |
 |---|---|---|
 | Grafana | http://localhost:3000 | admin / admin123 |
 | Prometheus | http://localhost:9090 | — |
@@ -89,47 +89,47 @@ docker compose up -d
 
 ---
 
-## 📊 Alertas configurados
+## 📊 Configured Alerts
 
-| Alerta | Condição | Severidade |
+| Alert | Condition | Severity |
 |---|---|---|
-| HostDown | Target sem resposta por 1min | 🔴 Critical |
-| HighCPUUsage | CPU > 85% por 5min | 🟡 Warning |
-| HighMemoryUsage | Memória > 90% por 5min | 🟡 Warning |
-| DiskSpaceLow | Disco < 15% disponível | 🔴 Critical |
+| HostDown | Target unresponsive for 1min | 🔴 Critical |
+| HighCPUUsage | CPU > 85% for 5min | 🟡 Warning |
+| HighMemoryUsage | Memory > 90% for 5min | 🟡 Warning |
+| DiskSpaceLow | Disk < 15% available | 🔴 Critical |
 
 ---
 
-## 📁 Estrutura do projeto
+## 📁 Project structure
 
 ```
 observability-homelab/
 ├── docker-compose.yml
 ├── prometheus/
-│   ├── prometheus.yml       # Configuração de scrape e regras
-│   └── alerts.yml           # Regras de alerta
+│   ├── prometheus.yml       # Scrape config and rules
+│   └── alerts.yml           # Alert rules
 ├── grafana/
 │   ├── provisioning/
-│   │   ├── datasources/     # Prometheus como datasource padrão
-│   │   └── dashboards/      # Provisionamento automático de dashboards
-│   └── dashboards/          # Arquivos JSON dos dashboards
+│   │   ├── datasources/     # Prometheus as default datasource
+│   │   └── dashboards/      # Automatic dashboard provisioning
+│   └── dashboards/          # Dashboard JSON files
 ├── alertmanager/
-│   └── alertmanager.yml     # Roteamento de alertas (Slack)
+│   └── alertmanager.yml     # Alert routing (Slack)
 └── zabbix/
 ```
 
 ---
 
-## 📌 Próximos passos
+## 📌 Next steps
 
-- [ ] Adicionar Loki para coleta de logs
-- [ ] Criar dashboard de SLO/SLI no Grafana
-- [ ] Adicionar script Python para relatório de alertas
-- [ ] Integrar Blackbox Exporter para monitoramento de endpoints HTTP
+- [ ] Add Loki for log collection
+- [ ] Create SLO/SLI dashboard in Grafana
+- [ ] Add Python script for alert reporting
+- [ ] Integrate Blackbox Exporter for HTTP endpoint monitoring
 
 ---
 
-## 👩‍💻 Autora
+## 👩‍💻 Author
 
 **Bianca Gasparino de Campos**  
 Observability & SRE Engineer  
