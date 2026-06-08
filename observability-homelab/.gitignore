@@ -1,0 +1,12 @@
+# Dados sensíveis
+alertmanager/alertmanager.yml
+.env
+*.env
+
+# Docker volumes locais
+grafana-data/
+zabbix-db-data/
+
+# OS
+.DS_Store
+Thumbs.db
