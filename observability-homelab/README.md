@@ -37,6 +37,11 @@
 └─────────────────────────────────────────────────┘
 ```
 
+## 📸 Screenshots
+
+![Grafana Dashboard](observability-homelab/grafana-dashboard.png)
+![Prometheus Query](observability-homelab/prometheus-query.png)
+
 ## 🛠️ Stack
 
 | Ferramenta | Função | Porta |
